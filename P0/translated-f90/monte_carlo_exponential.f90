@@ -17,7 +17,7 @@ program monte_carlo_exponential
     n_samples = 10000
     
     ! Inicialización del generador
-    call rng_initialize(seed, random_vector, n_samples)
+    call rng_initialize(seed, random_vector)
     call random_number_array(random_vector, n_samples)
     
     sum_samples = 0.0

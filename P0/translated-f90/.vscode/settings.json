@@ -1,0 +1,6 @@
+{
+    "fortran.linter.includePaths": ["${workspaceFolder}/include"],
+    "fortran.fortls.disabled": false,
+    "fortran.fortls.path": "fortls",
+    "fortran.fortls.configure": "./fortls.config.json"
+}
