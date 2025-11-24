@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile-fortran",
+            "type": "shell",
+            "command": "gfortran",
+            "dependsOn": "create-folder-if-not-exist",
+            "args": ["-g", "-Og", "-fimplicit-none", "-fcheck=all", "-fbacktrace", "${file}", "-o", "${fileDirname}/builds/${fileBasenameNoExtension}.out"]
+        },
+        {
+            "label": "create-folder-if-not-exist",
+            "type": "shell",
+            "command": "mkdir",
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            // windows
+            // "args": ["${fileDirname}/builds", "-f", "|", "Out-Null"]
+            
+            // linux
+            "args": ["-p", "${fileDirname}/builds"]
+        }
+    ],
+}
