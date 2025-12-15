@@ -40,10 +40,12 @@ program p2
 !$omp end parallel do
 
    open(file='./files/stats-mc3.dat', action='write', unit=12)
+   write(12, *) '# L, T, SUM, <E>, <E^2>, Var E, <M>, <|M|>, <M^2>, Var M'
    do i_temp = 0, n_temp_steps
       write(12, *) temp_stats(i_temp)%L, temp_stats(i_temp)%temp, temp_stats(i_temp)%sum, &
          temp_stats(i_temp)%avg_energy, temp_stats(i_temp)%avg_energy_sqrd, temp_stats(i_temp)%var_energy, &
-         temp_stats(i_temp)%avg_magne, temp_stats(i_temp)%avg_magne_sqrd, temp_stats(i_temp)%var_magne
+         temp_stats(i_temp)%avg_magne, temp_stats(i_temp)%avg_abs_magne, &
+         temp_stats(i_temp)%avg_magne_sqrd, temp_stats(i_temp)%var_magne
    end do
    close(unit=12)
 

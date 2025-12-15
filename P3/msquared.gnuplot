@@ -4,15 +4,14 @@
 
 # Parámetros de los ficheros (fáciles de editar)
 set terminal png
-set output "energy.png"
+set output "magne.png"
 
-set ylabel "Energy"
+set ylabel "Magnetization"
 set xlabel "Reduced temperature"
 set xrange [0:4]
-set yrange [-2:0]
+set yrange [0:1.2]
 set grid
-
+set key right top
 # Dibuja todos los ficheros en una sola línea de comando usando un bucle
-plot "files/stats-mc3.dat" using 2:($4/($1*$1)) with points lw 2
-
-set key left top
+plot "files/stats-mc3.dat" using 2:($8/($1*$1)) with points lw 2 title '<|m|>', \
+     "files/stats-mc3.dat" using 2:(sqrt($9)/($1*$1)) with points lw 2 title 'sqrt(<m^2>)'
