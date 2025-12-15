@@ -13,6 +13,8 @@ set yrange [-2:0]
 set grid
 
 # Dibuja todos los ficheros en una sola línea de comando usando un bucle
-plot "files/stats-mc3.dat" using 2:($4/($1*$1)) with points lw 2
-
+plot "files/stats-mc3-  8.dat" using 2:($4/($1*$1)) with points lw 1 title 'L=8',\
+ "files/stats-mc3- 16.dat" using 2:($4/($1*$1)) with points lw 1 title 'L=16',\
+  "files/stats-mc3- 32.dat" using 2:($4/($1*$1)) with points lw 1 title 'L=32',\
+   "files/stats-mc3- 64.dat" using 2:($4/($1*$1)) with points lw 1 title 'L=64'
 set key left top
