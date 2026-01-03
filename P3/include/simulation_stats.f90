@@ -13,6 +13,7 @@ module simulation_stats
       real(dp) :: var_energy, var_magne
       real(dp) :: temp
       integer(ik) :: sum, L
+      real(dp) :: time
    contains
       procedure, public :: add_results
       procedure, public :: normalize

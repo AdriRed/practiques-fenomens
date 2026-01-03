@@ -4,17 +4,15 @@
 
 # Parámetros de los ficheros (fáciles de editar)
 set terminal png
-set output "energy.png"
+set output "magneabs.png"
 
-set ylabel "Energy"
-set xlabel "Reduced temperature"
-set xrange [0:4]
-set yrange [-2:0]
+set ylabel "<|M|>"
+set xlabel "T"
+set xrange [1:5]
+set yrange [0:1.2]
 set grid
+set key right top
 
 Ls = "8 16 24 32 48 64 96 128"
 
-set key left top
-plot for [i=1:words(Ls)] sprintf("files/stats-mc3-%3d.dat", word(Ls, i)+0) using 2:($4/($1*$1)) with points lw 1 title sprintf('L=%s', word(Ls, i))
-
-
+plot for [i=1:words(Ls)] sprintf("files/stats-mc3-%3d.dat", word(Ls, i)+0) using 2:($8/($1*$1)) with points lw 2 title sprintf('L = %d', word(Ls, i)+0)
