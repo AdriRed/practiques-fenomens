@@ -14,13 +14,13 @@ program p2
    integer(i4) :: n_seed, i_temp
    real(dp) :: temps(34)
    integer(ik) :: mc_ini, mc_d, mctot_array(1)
-   integer(i4) :: Ls(5), iL, iMCTOT
+   integer(i4) :: Ls(3), iL, iMCTOT
    character(3) :: sL
    type(sim_stats) :: tstats
 
    ! Ls = (/8, 16, 24, 32, 48, 64, 96, 128/)
    ! Ls = (/8, 16, 24/)
-   Ls = (/32, 48, 64, 96, 128/)
+   Ls = (/64, 96, 128/)
    temps = (/1.4, 1.6, 1.8, 2., 2.1, 2.2, 2.21, 2.22, 2.23, 2.24, 2.25, 2.26, 2.27, 2.28, 2.29, 2.30, &
          2.31, 2.32, 2.33, 2.34, 2.35, 2.36, 2.37, 2.38, 2.39, 2.40, &
          2.4, 2.5, 2.6, 2.7, 2.8, 3., 3.2, 3.4/)
